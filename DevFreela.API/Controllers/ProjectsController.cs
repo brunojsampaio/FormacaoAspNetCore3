@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace DevFreela.API.Controllers
 {
     [Route("api/projects")]
-    public class ProjectsController : Controller
+    public class ProjectsController : ControllerBase
     {
         [HttpGet]
         public IActionResult Get(string query)
