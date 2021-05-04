@@ -28,7 +28,7 @@ namespace DevFreela.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.Configure<OpeningTimeOption>(Configuration.GetSection("OpeningTime"));
-                
+
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
