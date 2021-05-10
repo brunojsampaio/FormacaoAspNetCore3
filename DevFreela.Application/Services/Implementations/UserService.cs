@@ -30,6 +30,7 @@ namespace DevFreela.Application.Services.Implementations
                 inputModel.BirthDate);
             
             _dbContext.Users.Add(user);
+            _dbContext.SaveChanges();
 
             return user.Id;
         }
