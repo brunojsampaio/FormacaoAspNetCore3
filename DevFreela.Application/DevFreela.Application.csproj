@@ -11,6 +11,19 @@
 
     <ItemGroup>
       <PackageReference Include="Dapper" Version="2.0.90" />
+      <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="InputModels\CreateCommentInputModel.cs" />
+      <Compile Remove="InputModels\CreateUserInputModel.cs" />
+      <Compile Remove="InputModels\NewProjectInputModel.cs" />
+      <Compile Remove="InputModels\UpdateProjectInputModel.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Services\Implementations" />
+      <Folder Include="Services\Interfaces" />
     </ItemGroup>
 
 </Project>
