@@ -1,3 +1,4 @@
+using System.Globalization;
 using DevFreela.API.Filters;
 using DevFreela.Application.Commands.CreateProject;
 using DevFreela.Application.Validators;
@@ -37,7 +38,11 @@ namespace DevFreela.API
             services.AddScoped<ISkillRepository, SkillRepository>();
             
             services.AddControllers(options => options.Filters.Add(typeof(ValidationFilter)))
-                .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreaterUserCommandValidador>());
+                .AddFluentValidation(fv =>
+                {
+                    fv.RegisterValidatorsFromAssemblyContaining<CreaterUserCommandValidador>();
+                    fv.ValidatorOptions.LanguageManager.Culture = new CultureInfo("pt-BR");
+                });
 
             services.AddMediatR(typeof(CreateProjectCommand));
             
