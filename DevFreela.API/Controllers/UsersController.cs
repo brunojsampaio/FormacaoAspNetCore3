@@ -36,6 +36,8 @@ namespace DevFreela.API.Controllers
         public async Task<IActionResult> Post([FromBody] CreaterUserCommand command)
         {
             var id = await _mediator.Send(command);
+
+            command.Password = "";
             
             return CreatedAtAction(nameof(GetById), new {id = id}, command);
         }
